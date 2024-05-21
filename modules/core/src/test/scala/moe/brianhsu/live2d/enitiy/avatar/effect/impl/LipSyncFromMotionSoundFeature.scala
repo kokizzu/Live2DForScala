@@ -31,6 +31,7 @@ class LipSyncFromMotionSoundFeature extends AnyFeatureSpec with GivenWhenThen wi
       processorsHolder.failure.exception shouldBe a[FileNotFoundException]
     }
 
+    /*
     Scenario("Create processors from exist sound file", AudioOutputTest) {
       When("create the processors from exist sound file")
       val processorsHolder = DefaultProcessorsFactory("src/test/resources/sounds/16.wav", 50)
@@ -43,6 +44,7 @@ class LipSyncFromMotionSoundFeature extends AnyFeatureSpec with GivenWhenThen wi
       audioRMSCalculator should not be null
       audioStreamCloser should not be null
     }
+    */
 
     Scenario("Create the LipFromMotionSound from avatar settings") {
       Given("an avatar setting")

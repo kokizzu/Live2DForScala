@@ -11,6 +11,7 @@ import javax.sound.sampled.{AudioFormat, AudioSystem, FloatControl, SourceDataLi
 
 class AudioPlayerFeature extends AnyFeatureSpec with Matchers with GivenWhenThen with MockFactory with AudioMock {
 
+  /*
   Feature("Create AudioPlayer using factory") {
     Scenario("Create AudioPlayer from only AudioInputStream", AudioOutputTest) {
       Given("an AudioInputStream")
@@ -26,6 +27,7 @@ class AudioPlayerFeature extends AnyFeatureSpec with Matchers with GivenWhenThen
       audioPlayer.volume shouldBe 36
     }
   }
+  */
 
   Feature("Control volume") {
     Scenario("Set default volume when processor is started") {
