@@ -26,7 +26,7 @@ jobs:
       - name: Install packages
         run: |
           apt-get update -yqq
-          apt-get install apt-transport-https -yqq
+          apt-get install apt-transport-https url -yqq
           apt-get install openjdk-17-jre openjdk-17-jdk-headless -yqq
           echo "deb https://repo.scala-sbt.org/scalasbt/debian all main" | tee /etc/apt/sources.list.d/sbt.list
           echo "deb https://repo.scala-sbt.org/scalasbt/debian /" | tee /etc/apt/sources.list.d/sbt_old.list
