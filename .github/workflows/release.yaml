@@ -59,7 +59,7 @@ jobs:
       - name: Release
         run: |
           ./distclean
-          sbt "release with-defaults"
+          LANG=C.utf-8 sbt "release with-defaults"
 
       - name: Export Version
         id: VersionExport
@@ -97,7 +97,7 @@ jobs:
       - name: Assembly JAR
         run: |
           ./distclean
-          sbt clean assembly
+          LANG=C.utf-8 sbt clean assembly
 
       - name: Package runnable JAR files
         run: |
