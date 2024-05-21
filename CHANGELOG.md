@@ -9,11 +9,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [Unreleased]
 -------------
 
-2.0.2
+2.0.3
 -----
 
 ### Changed
+
+- Updated to Cusbism Native SDK 5.0.
+- Add MocVersion50 to represent .moc version above 5.0.
 - Updated all Java / Scala dependency to latest version.
+
+2.0.2
+-----
 
 ### Fixed
 - Fixed some Live2D model will yield `IndexOutOfBoundException: Required 1 remaining elements in buffer, only had 0` when using JavaOpenGLBinding to render the Live2D model. (Issue [#3](https://github.com/brianhsu/Live2DForScala/issues/3))
