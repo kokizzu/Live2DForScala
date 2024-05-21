@@ -5,6 +5,8 @@ Live2D For Scala (JVM / Linux / Windows / MacOS Intel)
 ![Development Build Status](https://img.shields.io/github/actions/workflow/status/brianhsu/Live2DForScala/unitTest.yaml?branch=develop&logo=github&style=for-the-badge&label=DEV%20BUILD) 
 ![Code Coverage](doc/images/coverage.svg)
 
+[ENGLISH](README.md)  [日本語](README.ja_JP.md)  [简体中文](README.zh_CN.md)
+--
 Disclaimer
 -----------
 
@@ -158,7 +160,7 @@ Build Instruction
 
 ### 3. Compile
 
-1. After SBT is installed, run the following command the clone this project from GitHub.
+1. After SBT is installed, run the following command the clone this project from GitHub.(Taking the upstream project as an example)
 
 ```console
 username@hostname:~$ git clone https://github.com/brianhsu/Live2DForScala.git
@@ -212,7 +214,7 @@ sbt:live2dforscala> compile
 sbt:live2dforscala> 
 ```
 
-### 3. Compile
+### 4. Test
 
 - Type `test` in SBT console to run unit test.
 - Since MacOS does not support SWT+JWJGL, SWTOpenGLCanvasInfoFeature would faild. It's expected.
@@ -236,7 +238,7 @@ sbt:live2dforscala> test
 sbt:live2dforscala> 
 ```
 
-### 3. Run Demo Application
+### 5. Run Demo Application
 
 Type the following command in SBT console to run the demo application.
 
@@ -253,6 +255,50 @@ sbt:live2dforscala> exampleSwing/run
 sbt:live2dforscala> exampleSWTLinux/run                    
 [info] running (fork) moe.brianhsu.live2d.demo.swing.SwingMain
 ```
+
+### 6. Assembly
+
+
+Type the following command in SBT console to run the assembly.
+
+- `exampleSwing/assembly` to assembly Swing version. Works for Linux / Windows / MacOS.
+- `exampleSWTLinux/assembly` to assembly SWT version on Linux.
+- `exampleSWTWin/assembly` to assembly SWT version on Windows.
+
+```console
+sbt:live2dforscala> exampleSWTLinux/assembly
+[info] Strategy 'deduplicate' was applied to 5 files (Run the task at debug level to see details)
+[info] Strategy 'discard' was applied to 13 files (Run the task at debug level to see details)
+[info] Strategy 'rename' was applied to a file (Run the task at debug level to see details)
+[info] Assembly up to date: /home/eric/Desktop/codeing/Live2DForScala/modules/examples/swt-linux-bundle/target/scala-2.13/Live2DForScala-SWT-Linux-1.0.2.jar
+
+```
+
+
+### 7. Use release-tool 
+
+[warning]Only linux, windows runs need to change the command.
+
+Type the following command in SBT console to run the release-tool.
+
+It will collect jar packages, required files and create new executables.
+
+Don't worry about the error.
+
+- `releaseswing` to run Swing version. Works for Linux / Windows / MacOS.
+- `releaselinux` to run SWT version on Linux.
+- `releasewin` to run SWT version on Windows.
+
+```console
+sbt:live2dforscala> releaselinux
+Directory 'release-pkg/Live2DForScala-SWT-Linux-1.0.2' already exists.
+[error] stack trace is suppressed; run last moveTasklinux for the full output
+[error] stack trace is suppressed; run last createReleasePackageTasklinux for the full output
+[error] (moveTasklinux) Failed to copy extra file: exit code 
+[error] (createReleasePackageTasklinux) Failed to copy openSeeFace directory: exit code 
+```
+
+
 
 License
 ==============================
